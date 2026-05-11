@@ -1,12 +1,18 @@
 package com.alan.springboot.di.app.repositories;
 
 import com.alan.springboot.di.app.models.Product;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Repository
+@Primary
+//@SessionScope
+//@RequestScope
+@Repository("productList")
 public class ProductRepositoryImpl implements ProductRepository {
     private List<Product> data;
 
